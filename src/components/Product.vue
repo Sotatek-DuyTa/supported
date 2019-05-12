@@ -53,13 +53,14 @@ export default {
 </script>
 <style scoped>
 .category {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   padding: 15px;
   border-radius: 5px;
 
   .category__title {
     margin: 0 0 10px;
+    font-size: 13px;
   }
 }
 
@@ -87,14 +88,14 @@ export default {
   .product__title {
     margin: 0 0 10px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .product__price {
     margin: 0;
     font-weight: 500;
     color: #333;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .product__infor {

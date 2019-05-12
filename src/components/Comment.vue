@@ -1,7 +1,7 @@
 <template>
   <div class="comment">
     <div class="t">Bình Luận</div>
-    <div class="comment__input">
+    <div class="comment__input" :class="{'disable': !this.user_id}">
       <input type="text" name id v-model="content">
       <button @click="commentHandle">Gửi</button>
     </div>
@@ -9,7 +9,7 @@
     <div class="comment__list">
       <div class="comment-item" v-for="(comment, index) in comments" :key="index">
         <div class="user-box">
-          <img src="images/user.svg" width="30px" height="30px" alt="user">
+          <img src="/images/user.svg" width="30px" height="30px" alt="user">
           <span class="name">{{ comment.users }}</span>
         </div>
         <div class="comment-content">
@@ -74,9 +74,9 @@ export default {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    font-size: 16px;
-    height: 35px;
-    border-radius: 50px;
+    font-size: 14px;
+    height: 45px;
+    border-radius: 20px;
     border: 1px solid #999;
 
     &:focus,
@@ -86,20 +86,42 @@ export default {
   }
 
   input {
-    width: calc(100% - 87px);
+    width: calc(100% - 107px);
     padding: 0 20px;
   }
 
   button {
     background-color: #05b79e;
-    width: 80px;
+    width: 100px;
     color: #fff;
     margin-left: 7px;
+  }
+
+  &.disable {
+    position: relative;
+
+    &:after {
+      content: ' Xin vui lòng đăng nhập !';
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      line-height: 45px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
 
 .comment-item {
-  margin-bottom: 20px;
+  background-color: #eee;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
   .user-box {
     display: inline-block;
     margin-bottom: 5px;
@@ -111,7 +133,7 @@ export default {
     .text {
       border: none;
       display: inline-block;
-      font-size: 17px;
+      font-size: 12px;
     }
   }
 
@@ -123,6 +145,7 @@ export default {
 
   .name {
     font-weight: 500;
+    font-size: 12px;
     color: #333;
     margin-left: 10px;
     color: #0e5bc1;
