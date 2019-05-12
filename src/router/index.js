@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import App from '../App';
 
 export default {
-  base: '/',
+  base: '/supported',
   mode: 'history',
   routes: [
     {
@@ -18,9 +18,5 @@ export default {
       path: '/product/:shop_id/:user_id',
       component: Layout,
     }
-      // {
-      //   path: '/product/:shop_id',
-      //   component: Product,
-      // }
   ]
 }
